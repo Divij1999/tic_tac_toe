@@ -1,0 +1,12 @@
+* {
+    margin: 0px;
+}
+
+
+.gameboard {
+    display: flex;
+    flex-wrap: wrap;
+    border:1px solid black;
+    height: 516px;
+    width: 516px;
+}
