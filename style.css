@@ -2,6 +2,40 @@
     margin: 0px;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    gap:10vh;
+}
+
+.header {
+    padding: 20px;
+    font-size: 2em;
+    width:100vw;
+    text-align: center;
+}
+
+.body {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+}
+
+.name {
+    display: flex;
+    flex-direction: column;
+    margin-left:-10vw;
+    padding-top: 8vh;
+    width: 20vw;
+    gap: 20px;
+}
+
+.one, .two {
+    font-size: 1.7em;
+}
+
 
 .gameboard {
     display: flex;
@@ -9,4 +43,5 @@
     border:1px solid black;
     height: 516px;
     width: 516px;
+    margin-left:5.45vw;
 }
