@@ -225,15 +225,17 @@ const displayController= (() => {
 
     const displayWinner= (winner) => {
         const endScreen=document.createElement("div");
-        endScreen.setAttribute("style", "height:100vh; width:100vw; background-color:rgba(255,255,255,1); opacity:0.5; position:fixed; display:flex; justify-content:center; align-items:center;");
+        endScreen.setAttribute("style", "height:100vh; width:100vw; background-color:rgba(0, 0, 0, 0.6); position:fixed; display:flex; justify-content:center; align-items:center;");
         const endMenu=document.createElement("div");
-        endMenu.setAttribute("style", "display:flex; height:10vh; width:15vw; flex-direction:column; justify-content:space-around;");
+        endMenu.setAttribute("style", "display:flex; height:10vh; width:15vw; flex-direction:column; justify-content:space-around; align-items:center;");
         const results=document.createElement("div");
         results.innerText=winner;
+        results.setAttribute("style", "color:white; font-size:2em;");
        
         const restartBtn=document.createElement("button");
         restartBtn.classList.value="restart";
         restartBtn.innerText="Play Again";
+        restartBtn.setAttribute("style", "width:100px; height:40px; ")
         restartBtn.addEventListener("click", (e) => {gameBoard.resetBoard(e, divs, endScreen)});
 
         endMenu.appendChild(results);
