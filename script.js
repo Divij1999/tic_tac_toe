@@ -63,11 +63,11 @@ const game=(() => {
         //Checking horizontally
         for(let i=0; i<=6; i+=3){
             if(gameBoard.getBoard()[i]==="x" && gameBoard.getBoard()[i+1]==="x" && gameBoard.getBoard()[i+2]==="x"){
-                console.log("x is winner");
+                
                 winner=_player1.name;
             }
             else if(gameBoard.getBoard()[i]==="o" && gameBoard.getBoard()[i+1]==="o" && gameBoard.getBoard()[i+2]==="o"){
-                console.log("o is winner");
+                
                 winner=_player2.name;
             }
                   
@@ -76,11 +76,11 @@ const game=(() => {
        //Checking vertically
        for(let i=0; i<3; ++i){
            if(gameBoard.getBoard()[i]==="x" && gameBoard.getBoard()[i+3]==="x" && gameBoard.getBoard()[i+6]==="x"){
-               console.log("x is winner");
+               
                winner=_player1.name;
            }
            else if(gameBoard.getBoard()[i]==="o" && gameBoard.getBoard()[i+3]==="o" && gameBoard.getBoard()[i+6]==="o"){
-               console.log("o is winner");
+               
                winner=_player2.name;
            }
        }
@@ -89,27 +89,31 @@ const game=(() => {
        for(let i=0; i<3; i+=2){
            if(i<2){
                 if(gameBoard.getBoard()[i]==="x" && gameBoard.getBoard()[i+4]==="x" && gameBoard.getBoard()[i+8]==="x"){
-                     console.log("x is winner");
+                     
                      winner=_player1.name;
                 }
                 else if(gameBoard.getBoard()[i]==="o" && gameBoard.getBoard()[i+4]==="o" && gameBoard.getBoard()[i+8]==="o"){
-                     console.log("o is winner");
+                     
                      winner=_player2.name;
                 }
 
             }
             else if(i===2){
                 if(gameBoard.getBoard()[i]==="x" && gameBoard.getBoard()[i+2]==="x" && gameBoard.getBoard()[i+4]==="x"){
-                    console.log("x is winner");
+                    
                     winner=_player1.name;
                }
                else if(gameBoard.getBoard()[i]==="o" && gameBoard.getBoard()[i+2]==="o" && gameBoard.getBoard()[i+4]==="o"){
-                    console.log("o is winner");
+                    
                     winner=_player2.name;
                }
 
             }
        
+        }
+
+        if(!gameBoard.getBoard().includes("")){
+            winner="Tie";
         }
         if(winner!=="")
           displayController.displayWinner(winner);
@@ -135,10 +139,10 @@ const gameBoard= (() => {
 
     //Setting the value of _board array
     const _setMark= (e) => {
-        console.log(e);
+        
         _board[e.target.dataset.index]=game.getCurrentPlayer().mark;
         displayController.displaySign(e, e.target.dataset.index);
-        console.log(_board);
+        
 
         //Checking if there is a winner after every input
         game.getWinner();
